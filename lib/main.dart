@@ -4,7 +4,7 @@ void main() {
   runApp(MyApp());
 }
 
-// Create Widget 
+// Create Widget
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -13,10 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "My App",
       home: Scaffold(
+        //Scaffold = layout
         appBar: AppBar(
           title: Text("APJ"),
         ),
-        body: Text("Hello"),
+        body: Center(
+          child: Text("Hello"),
+        ),
       ),
       theme: ThemeData(primarySwatch: Colors.green),
     );
