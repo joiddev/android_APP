@@ -7,8 +7,9 @@ void main() {
       appBar: AppBar(
         title: Text("APJ"),
       ),
-      body: Text("Hello") ,
+      body: Text("Hello"),
     ),
+    theme: ThemeData(primarySwatch: Colors.green),
   );
 
   runApp(app);
