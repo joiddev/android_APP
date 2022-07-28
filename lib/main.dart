@@ -18,7 +18,10 @@ class MyApp extends StatelessWidget {
           title: Text("APJ"),
         ),
         body: Center(
-          child: Text("Hello"),
+          child: Text(
+            "Hello",
+            style: TextStyle(fontSize: 30, color: Colors.orange),
+          ),
         ),
       ),
       theme: ThemeData(primarySwatch: Colors.green),
