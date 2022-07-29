@@ -18,8 +18,12 @@ class MyApp extends StatelessWidget {
           title: Text("APJ"),
         ),
         body: Center(
-          child: Image(image: NetworkImage("https://scontent.fbkk13-2.fna.fbcdn.net/v/t39.30808-6/294420161_1726903590976067_8516873884478596380_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2xOiD2I8oQYAX9sC7Do&tn=vqKb6maqWirdVNT9&_nc_ht=scontent.fbkk13-2.fna&oh=00_AT88DSl3yXK2R8sWOXeQdJuoCd-kZ2ioREizEgRsFaG8_g&oe=62E6C158"),
-          ),
+          child: Column( mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Text("Hello"),
+            Text("Welcome"),
+            Text("APJ APPLICATION")
+          ]),
         ),
       ),
       theme: ThemeData(primarySwatch: Colors.green),
