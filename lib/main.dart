@@ -29,41 +29,31 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int number = 0; //Create State
 
+  //แสดงผลข้อมูล
   @override
   Widget build(BuildContext context) {
-
-
-    List<Widget> data = [];
-    data.add(Text("Number"));
-    data.add(Text(number.toString(),style: TextStyle(fontSize: 60),));
-
-    // Group of Text widget
-    for(var i = 0; i<=9;i++){
-      data.add(Text("Colum ${i+1}"));
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: Text("APJ"),
       ),
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, 
-        children: data,
-      ),),
-
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: addNumber,
-        child: Icon(Icons.add),
+        child: ListView(
+          children: getData(10),
+        ),
       ),
     );
   }
 
-  //addNumber function
-  void addNumber() {
-    setState(() {
-      number++;
-    });
+
+  //เตรียมข้อมูล
+  List<Widget> getData(int count){
+    //text
+    List<Widget> data = [];
+    for (var i = 0; i < count; i++) {
+      data.add(Text("Colum ${i + 1}",style: TextStyle(fontSize: 20),));
+    }
+    return data;
+    
   }
 }
 
