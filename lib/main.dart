@@ -27,20 +27,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int number = 0; //Create State
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("APJ"),
-        ),
-        body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text("Hello"),
-            Text("Welcome"),
-            Text("APJ APPLICATION")
-          ]),
-        ),
-      );
+      appBar: AppBar(
+        title: Text("APJ"),
+      ),
+      body: Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Text("Number"),
+          Text(
+            number.toString(),
+            style: TextStyle(fontSize: 60),
+          ),
+        ]),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+    );
   }
 }
 
