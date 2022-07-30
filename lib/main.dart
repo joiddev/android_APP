@@ -31,19 +31,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+
+    List<Widget> data = [];
+    data.add(Text("Number"));
+    data.add(Text(number.toString(),style: TextStyle(fontSize: 60),));
+
+    // Group of Text widget
+    for(var i = 0; i<=9;i++){
+      data.add(Text("Colum ${i+1}"));
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("APJ"),
       ),
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text("Number"),
-          Text(
-            number.toString(),
-            style: TextStyle(fontSize: 60),
-          ),
-        ]),
-      ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, 
+        children: data,
+      ),),
+
+
       floatingActionButton: FloatingActionButton(
         onPressed: addNumber,
         child: Icon(Icons.add),
@@ -51,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  //addNumber function
   void addNumber() {
     setState(() {
       number++;
