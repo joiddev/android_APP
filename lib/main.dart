@@ -38,22 +38,24 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: ListView(
-          children: getData(10),
+          children: getData(20),
         ),
       ),
     );
   }
 
-
   //เตรียมข้อมูล
-  List<Widget> getData(int count){
+  List<Widget> getData(int count) {
     //text
     List<Widget> data = [];
     for (var i = 0; i < count; i++) {
-      data.add(Text("Colum ${i + 1}",style: TextStyle(fontSize: 20),));
+      var menu = ListTile(
+        title: Text("เมนูที่ ${i + 1}",style: TextStyle(fontSize: 25),),
+        subtitle: Text("หัวข้อย่้อยที่ ${i + 1}"),
+      );
+      data.add(menu);
     }
     return data;
-    
   }
 }
 
