@@ -43,6 +43,39 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
+                "รายรับ",
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              Expanded(
+                child: Text(
+                  "200000",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.right,
+                ),
+              )
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Container(
+          padding: const EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+              color: Colors.lightGreen,
+              borderRadius: BorderRadius.circular(10)),
+          height: 150,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
                 "ยอดคงเหลือ",
                 style: TextStyle(
                     fontSize: 25,
@@ -53,10 +86,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text(
                   "200000",
                   style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,),
-                      textAlign: TextAlign.right,
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.right,
                 ),
               )
             ],
