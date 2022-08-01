@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'FoodMenu.dart';
 
@@ -23,81 +25,27 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
+ 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  
+  int number= 0;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print("Used inite state");
+  }
+
   //แสดงผลข้อมูล
   @override
   Widget build(BuildContext context) {
-    var column = Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(8.0),
-          decoration: BoxDecoration(
-              color: Colors.lightGreen,
-              borderRadius: BorderRadius.circular(10)),
-          height: 150,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "รายรับ",
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
-              Expanded(
-                child: Text(
-                  "200000",
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.right,
-                ),
-              )
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        Container(
-          padding: const EdgeInsets.all(8.0),
-          decoration: BoxDecoration(
-              color: Colors.lightGreen,
-              borderRadius: BorderRadius.circular(10)),
-          height: 150,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "ยอดคงเหลือ",
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
-              Expanded(
-                child: Text(
-                  "200000",
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.right,
-                ),
-              )
-            ],
-          ),
-        ),
-      ],
-    );
+    print("used Build");
     return Scaffold(
         appBar: AppBar(
           title: Text("บัญชีของฉัน",
@@ -106,10 +54,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.white,
                   fontWeight: FontWeight.bold)),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: column,
-        ));
+        body: Column(
+          children: [
+            Text(number.toString(), style: TextStyle(fontSize: 30),)
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(onPressed: (){
+          setState(() {
+            number++;
+          });
+        },
+        child: Icon(Icons.add),),
+    );
   }
 }
 
