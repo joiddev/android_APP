@@ -31,36 +31,43 @@ class _MyHomePageState extends State<MyHomePage> {
   //แสดงผลข้อมูล
   @override
   Widget build(BuildContext context) {
+    var column = Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+              color: Colors.limeAccent,
+              borderRadius: BorderRadius.circular(10)),
+          height: 150,
+          child: Row(
+            children: [
+              Text("ยอดคงเหลือ", style: TextStyle(fontSize: 20),),
+              Text("200000", style: TextStyle(fontSize: 20),)
+              ],
+          ),
+        ),
+        Container(
+          decoration: BoxDecoration(
+              color: Colors.blueGrey, borderRadius: BorderRadius.circular(10)),
+          height: 150,
+        ),
+        Container(
+          decoration: BoxDecoration(
+              color: Colors.deepOrange,
+              borderRadius: BorderRadius.circular(10)),
+          height: 150,
+        )
+      ],
+    );
     return Scaffold(
         appBar: AppBar(
           title: Text("บัญชีของฉัน"),
         ),
-        body: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.limeAccent,
-                  borderRadius: BorderRadius.circular(10)),
-              height: 150,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.blueGrey,
-                borderRadius: BorderRadius.circular(10)
-              ),
-              height: 150,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.deepOrange,
-                borderRadius: BorderRadius.circular(10)
-              ),
-              height: 150,
-            )
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: column,
         ));
   }
 }
-
 
 //Scaffold = layout
