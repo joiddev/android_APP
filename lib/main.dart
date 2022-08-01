@@ -36,32 +36,41 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           padding: const EdgeInsets.all(8.0),
           decoration: BoxDecoration(
-              color: Colors.limeAccent,
+              color: Colors.lightGreen,
               borderRadius: BorderRadius.circular(10)),
           height: 150,
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("ยอดคงเหลือ", style: TextStyle(fontSize: 20),),
-              Text("200000", style: TextStyle(fontSize: 20),)
-              ],
+              Text(
+                "ยอดคงเหลือ",
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              Expanded(
+                child: Text(
+                  "200000",
+                  style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,),
+                      textAlign: TextAlign.right,
+                ),
+              )
+            ],
           ),
         ),
-        Container(
-          decoration: BoxDecoration(
-              color: Colors.blueGrey, borderRadius: BorderRadius.circular(10)),
-          height: 150,
-        ),
-        Container(
-          decoration: BoxDecoration(
-              color: Colors.deepOrange,
-              borderRadius: BorderRadius.circular(10)),
-          height: 150,
-        )
       ],
     );
     return Scaffold(
         appBar: AppBar(
-          title: Text("บัญชีของฉัน"),
+          title: Text("บัญชีของฉัน",
+              style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold)),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
